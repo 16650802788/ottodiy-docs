@@ -32,19 +32,29 @@ Here you can find all program files and source code links related to the Otto DI
 
 ### ESP32+AI Version Firmware
 
-| Version | Release Date | Feature Description                                                                                                                 | Download Link                |
-| ------- | ------------ | ----------------------------------------------------------------------------------------------------------------------------------- | ---------------------------- |
-| v2.0.4  | 2025-10-31   | Updated to Xiaozhi 2.0.4 with added fixed actions and AI custom programmed actions, see MCP tools in [User Manual](/docs/usage#五动作) for details | [2.0.4](/files/otto2.0.4.bin) |
-| v1.4.4  | 2025-6-13    | Added initial position calibration, "Dialogue: calibrate left foot to 10 degrees/-10 degrees"                                      | [1.4.4](/files/otto1.4.4.bin) |
-| v1.4.3  | 2025-6-13    | fix(ota): Fixed OTA upgrade crash bug                                                                                               | 1.4.3                        |
-| v1.4.2  | 2025-6-5     | 1. Code standardization<br/>2. Fixed theme switching bug                                                                            | 1.4.2                        |
-| v1.4.0  | 2025-6-5     | 1. Updated to Xiaozhi 1.7.0<br/>2. MCP protocol control robot actions<br/>3. GIF expressions inherit lcdDisplay, Otto-specific theme | 1.4.0                        |
-| v1.3.1  | 2025-5-27    | 1. Added task priority to prevent listening state action slowdown<br/>2. Action task resident, no detach to solve "jerking" bug, but increases power consumption<br/>3. Home restoration 500 | [1.3.1](/files/otto1.3.1.bin) |
-| v1.2    | 2025-4-26    | Added arm function code                                                                                                             | 1.2                          |
-| v1.1    | 2025-4-23    | Updated to Xiaozhi 1.6.0, fixed sudden "paralysis" bug                                                                              | 1.1                          |
-| v1.0    | 2025-4-9     | Initial version with basic movement and voice control features                                                                      | 1.0                          |
+| Version  | Release Date | Feature Description                                                                                                                                                                          | Download Link                     |
+| -------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------- |
+| v2.0.4-2 | 2025-11-17   | Added WeChat Mini Program control/calibration/customization features                                                                                                                         | [2.0.4-2](/files/otto2.0.4-2.bin) |
+| v2.0.4   | 2025-10-31   | Updated to Xiaozhi 2.0.4 with added fixed actions and AI custom programmed actions, see MCP tools in [User Manual](/docs/usage#五动作) for details                                           | [2.0.4](/files/otto2.0.4.bin)     |
+| v1.4.4   | 2025-6-13    | Added initial position calibration, "Dialogue: calibrate left foot to 10 degrees/-10 degrees"                                                                                                | [1.4.4](/files/otto1.4.4.bin)     |
+| v1.4.3   | 2025-6-13    | fix(ota): Fixed OTA upgrade crash bug                                                                                                                                                        | 1.4.3                             |
+| v1.4.2   | 2025-6-5     | 1. Code standardization<br/>2. Fixed theme switching bug                                                                                                                                     | 1.4.2                             |
+| v1.4.0   | 2025-6-5     | 1. Updated to Xiaozhi 1.7.0<br/>2. MCP protocol control robot actions<br/>3. GIF expressions inherit lcdDisplay, Otto-specific theme                                                         | 1.4.0                             |
+| v1.3.1   | 2025-5-27    | 1. Added task priority to prevent listening state action slowdown<br/>2. Action task resident, no detach to solve "jerking" bug, but increases power consumption<br/>3. Home restoration 500 | [1.3.1](/files/otto1.3.1.bin)     |
+| v1.2     | 2025-4-26    | Added arm function code                                                                                                                                                                      | 1.2                               |
+| v1.1     | 2025-4-23    | Updated to Xiaozhi 1.6.0, fixed sudden "paralysis" bug                                                                                                                                       | 1.1                               |
+| v1.0     | 2025-4-9     | Initial version with basic movement and voice control features                                                                                                                               | 1.0                               |
 
 **Download the latest firmware, compatible with all circuit board versions**
+
+### WeChat Mini Program
+
+Version v2.0.4-2 supports robot control, calibration, and customization through WeChat Mini Program. Scan the QR code below to use:
+
+<p align="center">
+  <ImgWithBaseUrl src="/img/wechat-mini-program.jpg" alt="WeChat Mini Program QR Code" width="300" />
+  <div align="center"><em>WeChat Mini Program QR Code</em></div>
+</p>
 
 ### Flashing Tools
 
