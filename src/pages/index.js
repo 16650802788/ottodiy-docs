@@ -31,7 +31,7 @@ function HomepageHeader() {
           </Link>
           <Link
             className="button button--secondary button--lg"
-            to="https://qm.qq.com/q/zF7VcP6RwI">
+            to="https://qm.qq.com/q/DlTtZFM7VC">
             <Translate id="homepage.joinCommunity">加入开源技术交流社群</Translate> 💬
           </Link>
         </div>

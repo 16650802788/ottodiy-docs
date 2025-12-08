@@ -175,7 +175,7 @@ const config = {
               },
               {
                 label: 'QQ群',
-                href: 'https://qm.qq.com/q/lvXglQWimm',
+                href: 'https://qm.qq.com/q/DlTtZFM7VC',
               },
             ],
           },
