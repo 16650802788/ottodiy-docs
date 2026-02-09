@@ -1,0 +1,75 @@
+名称：构建和发布
+
+在：
+  推：
+    分支: [主要,主控]
+  拉请求：
+    分支: [主要,主控]
+  工作流程_调度：
+
+职位：
+  建造：
+    运行： ubuntu-latest
+    
+    步骤：
+    -名称：结帐代码
+      使用： actions/checkout@v3
+      和：
+        子模块：递归
+    
+    -名称：设置 ESP-IDF
+      使用： espressif/esp-idf-ci-action@v1
+      和：
+        esp_idf_版本： v5.4
+        目标： esp32s3
+    
+    -名称：配置项目
+      运行：|
+        idf.py 设置目标 esp32s3
+        # 启用语音打断功能需要的配置
+        echo "CONFIG_LV_FONT_FMT_TXT_LARGE=y" >> sdkconfig.defaults
+    
+    -名称：构建固件
+      运行： idf.py 构建
+    
+    - name :生成合并固件
+      运行：|
+        光盘构建
+        esptool.py --chip esp32s3 merge_bin \
+          -o merged-flash.bin \
+          --flash_mode dio \
+          --flash_size 16MB \
+          0x0 引导加载程序/引导加载程序.bin \
+          0x100000 xiaozhi.bin \
+          0x8000 分区表/分区表.bin \
+          0xd000 ota_data_initial.bin
+    
+    - name :上传工件
+      使用： actions/upload-artifact@v3
+      和：
+        名称：固件
+        路径：|
+          构建/merged-flash.bin
+          build/xiaozhi.bin
+          构建/bootloader/bootloader.bin
+          构建/分区表/分区表.bin
+    
+    -名称：创建发布
+      if : github.event_name == 'push' && github.ref == 'refs/heads/main'
+      使用： softprops/action-gh-release@v1
+      和：
+        文件： build/merged-flash.bin
+        tag_name : v$ { { github.run_number } }
+        name : Release v$ { { github.run_number } } - 语音中断
+        身体：|
+          此版本包含语音打断功能
+          
+          ## 更新内容
+          - 在 Speaking 状态下，检测到用户说话自动打断
+          - 使用 VAD (Voice Activity Detection) 技术
+          
+          ## 固件信息
+          - 目标芯片: ESP32-S3
+          - 固件大小: 见 merged-flash.bin
+      环境：
+        GITHUB_TOKEN : $ { {秘密.GITHUB_TOKEN } }
